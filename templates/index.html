@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math For Child</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if feedback %}
+            <p>{{ feedback }}</p>
+        {% endif %}
+
+        <form method="post">
+
+            <div class="numberContainer">
+                <div class="number">{{ num1 }}</div>
+                <div class="operationSign">{{ operation }}</div>
+                <div class="number">{{ num2 }}</div>
+            </div>
+            <br>
+            <input type="hidden" name="num1" value="{{ num1 }}">
+            <input type="hidden" name="num2" value="{{ num2 }}">
+            <input type="hidden" name="operation" value="{{ operation }}">
+            <input type="text" id="answer" name="answer"><br><br>
+            <button type="submit" name="submit">Submit</button>
+            <button type="submit" name="next">Next</button>
+        </form>
+    </div>
+</body>
+</html>
